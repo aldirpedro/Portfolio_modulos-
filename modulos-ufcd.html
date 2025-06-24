@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Módulos de Formação</title>
+  <style>
+    :root {
+      --primary-color: #1f2937;
+      --secondary-color: #f3f4f6;
+      --accent-color: #2563eb;
+      --text-color: #111827;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.7;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+    main {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: var(--accent-color);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+    }
+    h3 {
+      color: #0d47a1;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    img, .img-illustration {
+      display: block;
+      margin: 1.2rem auto;
+      max-width: 95%;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px #2196f330;
+    }
+    .img-illustration {
+      background: #e3eafc;
+      padding: 1rem;
+      text-align: center;
+    }
+    .topic-section {
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 600px) {
+      main { padding: 1rem 0.2rem; }
+      h2 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Módulos de Formação</h1>
+    <p>Resumo visual e detalhado dos principais módulos UFCD</p>
+  </header>
+  <main style="max-width:1100px;margin:auto;padding:2rem 1rem;display:flex;flex-direction:column;gap:2.5rem;">
+    <!-- Sistemas Operativos -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/sistemas-operativos.jpg" alt="Sistemas Operativos" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Sistemas Operativos - Tipologias <span style="font-size:1rem;color:#888">(UFCD: 0797)</span></h2>
+        <ul>
+          <li><b>O que é um Sistema Operativo:</b> Intermediário entre utilizador/aplicações e hardware.</li>
+          <li><b>Características:</b> Gestão de processos, memória, armazenamento, E/S e segurança.</li>
+          <li><b>Tipologias:</b> Monotarefa/Multitarefa, Monoutilizador/Multiusuário, Distribuídos, Tempo Real, Embarcados.</li>
+          <li><b>Funcionamento Básico:</b> Inicialização, gestão de ficheiros, interrupções.</li>
+          <li><b>Componentes:</b> Kernel, shell, sistema de ficheiros, gestores de dispositivos.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Utilitários -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/utilitarios.jpg" alt="Utilitários" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Utilitários <span style="font-size:1rem;color:#888">(UFCD: 0798)</span></h2>
+        <ul>
+          <li><b>Linha de Comando:</b> ls, cd, mkdir, cp, mv, rm, ps, kill.</li>
+          <li><b>Editores/IDEs:</b> VS Code, Sublime, PyCharm, Eclipse.</li>
+          <li><b>VCS:</b> Git para controlo de versões.</li>
+          <li><b>Depuradores:</b> Debuggers para encontrar erros.</li>
+          <li><b>Compressão:</b> ZIP, RAR, GZ.</li>
+          <li><b>Rede:</b> ping, ipconfig/ifconfig, netstat.</li>
+          <li><b>Gestão de Pacotes:</b> pip, npm, apt/yum.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Fundamentos de Python -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/python.jpg" alt="Python" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Fundamentos de Python <span style="font-size:1rem;color:#888">(UFCD: 10793)</span></h2>
+        <ul>
+          <li><b>Conceitos Básicos:</b> Variáveis, tipos de dados, operadores.</li>
+          <li><b>Estruturas de Controlo:</b> if, elif, else, for, while.</li>
+          <li><b>Estruturas de Dados:</b> Listas, tuplos, dicionários, conjuntos.</li>
+          <li><b>Funções, módulos e pacotes.</b></li>
+          <li><b>Ficheiros:</b> Leitura e escrita.</li>
+          <li><b>Exceções:</b> try-except.</li>
+          <li><b>POO (Introdução):</b> Classes e objetos.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Programação em C/C++ -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/cpp.jpg" alt="C/C++" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Programação em C/C++ Fundamentos <span style="font-size:1rem;color:#888">(UFCD: 0809)</span></h2>
+        <ul>
+          <li><b>Sintaxe:</b> Estrutura, tipos, variáveis, operadores.</li>
+          <li><b>Controlo:</b> if-else, switch, for, while, do-while.</li>
+          <li><b>Funções, ponteiros, arrays, strings.</b></li>
+          <li><b>Entrada/Saída:</b> printf/scanf, cout/cin.</li>
+          <li><b>Structs e Uniões.</b></li>
+          <li><b>POO em C++ (Introdução):</b> Classes, objetos, herança, polimorfismo, encapsulamento.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Algoritmos -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/algoritmos.jpg" alt="Algoritmos" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Algoritmos <span style="font-size:1rem;color:#888">(UFCD: 0804)</span></h2>
+        <ul>
+          <li><b>Definição:</b> Passos lógicos para resolver problemas.</li>
+          <li><b>Representação:</b> Pseudocódigo, fluxogramas.</li>
+          <li><b>Tipos:</b> Pesquisa, ordenação, recursivos.</li>
+          <li><b>Complexidade:</b> Tempo, espaço, notação Big O.</li>
+          <li><b>Estratégias:</b> Divisão e conquista, programação dinâmica.</li>
+          <li><b>Resolução de problemas:</b> Decomposição e solução algorítmica.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Estrutura de Dados -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/estruturas-dados.jpg" alt="Estruturas de Dados" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Estrutura de Dados <span style="font-size:1rem;color:#888">(UFCD: 0805)</span></h2>
+        <ul>
+          <li><b>Conceito:</b> Organização eficiente dos dados.</li>
+          <li><b>Lineares:</b> Arrays, listas encadeadas, pilhas, filas.</li>
+          <li><b>Não lineares:</b> Árvores, grafos, tabelas hash.</li>
+          <li><b>Operações:</b> Inserção, remoção, pesquisa, atualização.</li>
+          <li><b>Comparação:</b> Escolha da estrutura conforme a complexidade.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Princípios Metodológicos -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/metodologia.jpg" alt="Princípios Metodológicos" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Princípios Metodológicos <span style="font-size:1rem;color:#888">(UFCD: 0806)</span></h2>
+        <ul>
+          <li><b>Qualidade:</b> Legibilidade, documentação, comentários, indentação.</li>
+          <li><b>Modularização e reutilização de código.</b></li>
+          <li><b>Padrões de Projeto:</b> Design patterns (introdução).</li>
+          <li><b>Testes:</b> Unitários, integração.</li>
+          <li><b>Depuração, documentação, princípios SOLID (introdução), refactoring.</b></li>
+        </ul>
+      </div>
+    </section>
+    <!-- Análise de Sistemas -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/analise.jpg" alt="Análise de Sistemas" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Análise de Sistemas <span style="font-size:1rem;color:#888">(UFCD: 0811)</span></h2>
+        <ul>
+          <li><b>SDLC:</b> Planeamento, análise, design, implementação, teste, manutenção.</li>
+          <li><b>Levantamento de Requisitos:</b> Técnicas, tipos, validação.</li>
+          <li><b>Modelagem:</b> Diagramas UML (casos de uso, classes, atividades).</li>
+          <li><b>Análise Estruturada vs. OO, protótipos.</b></li>
+        </ul>
+      </div>
+    </section>
+    <!-- Fundamentos de SQL -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/sql.jpg" alt="SQL" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Fundamentos de SQL <span style="font-size:1rem;color:#888">(UFCD: 10788)</span></h2>
+        <ul>
+          <li><b>Banco de Dados Relacionais:</b> Tabelas, chaves, colunas.</li>
+          <li><b>DDL:</b> CREATE, ALTER, DROP TABLE.</li>
+          <li><b>DML:</b> SELECT, INSERT, UPDATE, DELETE.</li>
+          <li><b>Consultas Avançadas:</b> JOINs, GROUP BY, HAVING, ORDER BY, funções de agregação.</li>
+          <li><b>DCL:</b> GRANT, REVOKE.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Metodologias de Desenvolvimento -->
+    <section class="modulo-card" style="background:#fff;border-radius:18px;box-shadow:0 4px 32px #2563eb15;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;padding:1.8rem;">
+      <img src="images/devmetod.jpg" alt="Metodologias de Desenvolvimento" style="width:160px;min-width:120px;border-radius:12px;box-shadow:0 2px 8px #2563eb30;object-fit:cover;">
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:#2563eb">Metodologias de Desenvolvimento <span style="font-size:1rem;color:#888">(UFCD: 10789)</span></h2>
+        <ul>
+          <li><b>Ciclo de Vida:</b> Fases e encaixe das metodologias.</li>
+          <li><b>Tradicional/Cascata:</b> Fases sequenciais, vantagens/desvantagens.</li>
+          <li><b>Ágeis:</b> Scrum, Kanban, XP, manifesto ágil, vantagens/desvantagens.</li>
+          <li><b>Iterativo, incremental, DevOps.</b></li>
+          <li><b>Escolha da Metodologia:</b> Como selecionar a melhor abordagem.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Botão voltar -->
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="index.html" style="display:inline-block;background:linear-gradient(90deg,#2563eb,#1f2937);color:#fff;font-weight:600;padding:12px 32px;border:none;border-radius:30px;text-decoration:none;font-size:1rem;box-shadow:0 2px 8px #2563eb30;transition:background 0.3s,transform 0.2s;">Voltar ao Início</a>
+    </div>
+  </main>
+</body>
+  <main>
+    <!-- SISTEMAS OPERATIVOS -->
+    <section class="topic-section">
+      <h2>Sistemas Operativos - Tipologias (UFCD: 0797)</h2>
+      <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/operating-system-1967470_1280.png" alt="Ilustração de sistemas operativos">
+      <h3>O que é um Sistema Operativo?</h3>
+      <p>O sistema operativo (SO) é o software essencial que gerencia os recursos de hardware e software de um computador, atuando como intermediário entre o utilizador/aplicações e o hardware.</p>
+      <h3>Características dos SOs</h3>
+      <ul>
+        <li>Gestão de processos</li>
+        <li>Gestão de memória</li>
+        <li>Gestão de armazenamento</li>
+        <li>Gestão de entrada/saída</li>
+        <li>Segurança</li>
+      </ul>
+      <h3>Tipologias de Sistemas Operativos</h3>
+      <ul>
+        <li><strong>Monotarefa vs. Multitarefa:</strong> Executa uma ou várias tarefas simultaneamente.</li>
+        <li><strong>Monoutilizador vs. Multiusuário:</strong> Suporte a um ou vários utilizadores ao mesmo tempo.</li>
+        <li><strong>Sistemas Distribuídos:</strong> Várias máquinas trabalham em conjunto como um único sistema.</li>
+        <li><strong>Sistemas de Tempo Real:</strong> Utilizados em aplicações que exigem respostas rápidas e precisas, como controlo industrial.</li>
+        <li><strong>Sistemas Embarcados:</strong> Presentes em dispositivos específicos (e.g., eletrodomésticos, carros).</li>
+      </ul>
+      <img src="https://www.researchgate.net/publication/343585964/figure/fig1/AS:924406370119680@1596879649642/Types-of-Operating-Systems.png" alt="Tipos de sistemas operativos">
+      <h3>Funcionamento Básico</h3>
+      <ul>
+        <li>Carregamento e inicialização</li>
+        <li>Gestão de ficheiros</li>
+        <li>Gestão de interrupções</li>
+      </ul>
+      <h3>Componentes Principais</h3>
+      <ul>
+        <li>Kernel</li>
+        <li>Shell</li>
+        <li>Sistema de ficheiros</li>
+        <li>Gestores de dispositivos</li>
+      </ul>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Operating_system_placement.svg" alt="Componentes de um sistema operativo">
+    </section>
+
+    <!-- UTILITÁRIOS -->
+    <section class="topic-section">
+      <h2>Utilitários (UFCD: 0798)</h2>
+      <img src="https://cdn.pixabay.com/photo/2014/04/03/10/32/tools-312417_1280.png" alt="Ilustração de utilitários e ferramentas">
+      <h3>Ferramentas de Linha de Comando</h3>
+      <ul>
+        <li>Comandos básicos: <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>, <code>ps</code>, <code>kill</code></li>
+      </ul>
+      <h3>Editores de Texto e IDEs</h3>
+      <ul>
+        <li>VS Code, Sublime Text, PyCharm, Eclipse</li>
+      </ul>
+      <h3>Sistemas de Controlo de Versões (VCS)</h3>
+      <ul>
+        <li>Git: Gerenciamento e rastreamento de alterações no código-fonte</li>
+      </ul>
+      <h3>Ferramentas de Depuração</h3>
+      <ul>
+        <li>Debuggers para identificar e corrigir erros</li>
+      </ul>
+      <h3>Utilitários de Compressão e Descompressão</h3>
+      <ul>
+        <li>ZIP, RAR, GZ</li>
+      </ul>
+      <h3>Ferramentas de Rede</h3>
+      <ul>
+        <li>ping, ipconfig/ifconfig, netstat</li>
+      </ul>
+      <h3>Ferramentas de Gestão de Pacotes</h3>
+      <ul>
+        <li>pip (Python), npm (Node.js), apt/yum (Linux)</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/terminal-1967472_1280.png" alt="Terminal e utilitários">
+    </section>
+
+    <!-- FUNDAMENTOS DE PYTHON -->
+    <section class="topic-section">
+      <h2>Fundamentos de Python (UFCD: 10793)</h2>
+      <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/python-1967471_1280.png" alt="Ilustração Python">
+      <h3>Conceitos Básicos de Programação</h3>
+      <ul>
+        <li>Variáveis, tipos de dados (inteiros, floats, strings, booleanos)</li>
+        <li>Operadores (aritméticos, relacionais, lógicos)</li>
+      </ul>
+      <h3>Estruturas de Controlo de Fluxo</h3>
+      <ul>
+        <li>Condicionais: <code>if</code>, <code>elif</code>, <code>else</code></li>
+        <li>Ciclos (Loops): <code>for</code> e <code>while</code></li>
+      </ul>
+      <h3>Estruturas de Dados em Python</h3>
+      <ul>
+        <li>Listas, tuplos, dicionários, conjuntos</li>
+      </ul>
+      <h3>Funções</h3>
+      <ul>
+        <li>Definição e chamada de funções</li>
+      </ul>
+      <h3>Módulos e Pacotes</h3>
+      <ul>
+        <li>Importação e uso de bibliotecas externas</li>
+      </ul>
+      <h3>Manipulação de Ficheiros</h3>
+      <ul>
+        <li>Leitura e escrita em ficheiros de texto</li>
+      </ul>
+      <h3>Tratamento de Exceções</h3>
+      <ul>
+        <li>Uso de <code>try-except</code> para lidar com erros</li>
+      </ul>
+      <h3>Programação Orientada a Objetos (Introdução)</h3>
+      <ul>
+        <li>Conceitos básicos de classes e objetos</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/code-1967473_1280.png" alt="Código Python ilustrativo">
+    </section>
+
+    <!-- PROGRAMACAO EM C/C++ -->
+    <section class="topic-section">
+      <h2>Programação em C/C++ Fundamentos (UFCD: 0809)</h2>
+      <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/cpp-1967474_1280.png" alt="Ilustração C++">
+      <h3>Sintaxe Básica de C/C++</h3>
+      <ul>
+        <li>Estrutura de um programa, tipos de dados, variáveis, operadores</li>
+      </ul>
+      <h3>Estruturas de Controlo</h3>
+      <ul>
+        <li><code>if-else</code>, <code>switch</code>, <code>for</code>, <code>while</code>, <code>do-while</code></li>
+      </ul>
+      <h3>Funções</h3>
+      <ul>
+        <li>Declaração, definição e chamada de funções</li>
+      </ul>
+      <h3>Ponteiros</h3>
+      <ul>
+        <li>Manipulação direta de memória</li>
+      </ul>
+      <h3>Arrays e Strings</h3>
+      <ul>
+        <li>Manipulação de coleções de dados e cadeias de caracteres</li>
+      </ul>
+      <h3>Entrada e Saída (I/O)</h3>
+      <ul>
+        <li>Uso de <code>printf/scanf</code> (C) e <code>cout/cin</code> (C++)</li>
+      </ul>
+      <h3>Estruturas (Structs) e Uniões (Unions)</h3>
+      <ul>
+        <li>Agrupamento de dados de diferentes tipos</li>
+      </ul>
+      <h3>Programação Orientada a Objetos em C++ (Introdução)</h3>
+      <ul>
+        <li>Classes, objetos, herança, polimorfismo, encapsulamento</li>
+      </ul>
+      <img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/programming-1967475_1280.png" alt="Ilustração programação C++">
+    </section>
+    <!-- Continue com os outros módulos seguindo o mesmo padrão -->
+  </main>
+  <footer>
+    <p>Consulte o <a href="https://catalogo.anqep.gov.pt/" target="_blank">Catálogo Nacional de Qualificações</a> para mais informações.</p>
+  </footer>
+</body>
+</html>

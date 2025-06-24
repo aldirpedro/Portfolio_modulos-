@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre | Aldir Pedro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', 'Roboto', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bg-animate {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      background: linear-gradient(120deg, #2196f3, #00e5ff, #1565c0, #181818);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease-in-out infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 24px #2196f380;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .profile-img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #18181880;
+    }
+    .contact-list {
+      display: flex;
+      gap: 2.5rem;
+      margin: 2.5rem 0 1.5rem 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contact-link {
+      color: #fff;
+      font-size: 2.7rem;
+      background: rgba(33,150,243,0.12);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px #2196f340;
+      transition: background 0.3s, transform 0.2s, color 0.2s;
+      text-decoration: none;
+      position: relative;
+    }
+    .contact-link:hover {
+      background: linear-gradient(135deg, #2196f3 60%, #00e5ff 100%);
+      color: #181818;
+      transform: scale(1.13) rotate(-8deg);
+      box-shadow: 0 4px 24px #2196f380;
+    }
+    .contact-label {
+      display: block;
+      margin-top: 0.7rem;
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .email {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #fff;
+      background: rgba(33,150,243,0.18);
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 2px 8px #2196f340;
+      transition: background 0.3s, color 0.2s;
+      display: inline-block;
+    }
+    .email:hover {
+      background: #00e5ff;
+      color: #181818;
+    }
+    @media (max-width: 600px) {
+      .contact-list { gap: 1.2rem; }
+      .profile-img { width: 90px; height: 90px; }
+      h1 { font-size: 1.3rem; }
+      .contact-link { font-size: 1.7rem; width: 48px; height: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animate"></div>
+  <div class="content">
+    <img src="images/IMG_7106.jpg" alt="Aldir Pedro" class="profile-img">
+    <h1>Aldir Pedro</h1>
+    <div class="contact-list">
+      <a href="https://www.linkedin.com/in/seu-perfil" class="contact-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/aldirpedro" class="contact-link" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/seu-usuario" class="contact-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:aldirpedro10@email.com" class="contact-link" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/351925805027" class="contact-link" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <a href="mailto:aldirpedro10@email.com" class="email">aldirpedro10@email.com</a>
+    <div class="email" style="margin-top:1rem;display:inline-block;"><i class="fas fa-phone-alt"></i> +351 925 805 027</div>
+  </div>
+</body>
+</html>

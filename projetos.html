@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meus Projetos</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #121212;
+      --secondary-bg: #181818;
+      --primary-color: #fff;
+      --accent: #2196f3;
+      --accent2: #00e5ff;
+      --shadow: #2196f340;
+      --card-radius: 16px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --primary-bg: #f3f4f6;
+        --secondary-bg: #fff;
+        --primary-color: #181818;
+        --accent: #1565c0;
+        --accent2: #2196f3;
+        --shadow: #2196f320;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--primary-color);
+      transition: background 0.3s, color 0.3s;
+    }
+    nav {
+      background-color: var(--secondary-bg);
+      padding: 1rem 0;
+      text-align: center;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      color: var(--accent);
+    }
+    /* Carrossel */
+    .carousel-container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: var(--secondary-bg);
+      border-radius: var(--card-radius);
+      box-shadow: 0 2px 16px var(--shadow);
+      padding: 2rem 1rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1s ease;
+    }
+    .carousel-slide {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      animation: fadeInUp 0.7s;
+    }
+    .carousel-slide.active { display: flex; }
+    .carousel-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent2);
+      text-align: center;
+    }
+    .carousel-desc {
+      color: #bdbdbd;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .carousel-frame {
+      width: 100%;
+      max-width: 700px;
+      height: 380px;
+      border: none;
+      border-radius: 8px;
+      background-color: #000;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 0 20px var(--shadow);
+    }
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .carousel-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-btn:hover { background: var(--accent2); transform: scale(1.1); }
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #bdbdbd;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active { background: var(--accent2); }
+    .main-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, var(--accent) 60%, var(--accent2) 100%);
+      color: #fff;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+      margin-bottom: 0.5rem;
+    }
+    .main-btn:hover {
+      background: linear-gradient(90deg, #1565c0 60%, #00bcd4 100%);
+      transform: scale(1.05);
+    }
+    /* Tech sections */
+    .tech-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      background: var(--secondary-bg);
+      border-radius: var(--card-radius);
+      box-shadow: 0 2px 16px var(--shadow);
+      padding: 2rem 1rem;
+      animation: fadeInUp 1s ease;
+    }
+    .tech-img {
+      width: 240px;
+      max-width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 2px 12px #2196f330;
+    }
+    .tech-content {
+      flex: 1;
+      min-width: 260px;
+    }
+    .tech-content h2 {
+      color: var(--accent2);
+      margin-bottom: 0.6rem;
+    }
+    .tech-content p {
+      color: #bdbdbd;
+      margin-bottom: 1rem;
+      font-size: 0.96rem;
+    }
+    .yt-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .yt-links a {
+      background: #ff0000;
+      color: #fff;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.3s;
+    }
+    .yt-links a:hover { background: #c20000; }
+    
+    /* Galeria de Imagens */
+    .gallery-section {
+      margin: 2rem auto;
+      max-width: 1000px;
+      background: var(--secondary-bg);
+      border-radius: var(--card-radius);
+      box-shadow: 0 2px 16px var(--shadow);
+      padding: 2rem 1rem;
+    }
+    .gallery-section h2 {
+      color: var(--accent2);
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .gallery-item {
+      background: var(--primary-bg);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .gallery-item h3 {
+      color: var(--accent2);
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+      font-weight: bold;
+      text-align: left;
+      background: rgba(18, 24, 40, 0.75);
+      padding: 0.4rem 1rem 0.2rem 1rem;
+      border-radius: 8px 8px 0 0;
+      box-shadow: 0 2px 8px #0004;
+    }
+    .gallery-item p {
+      color: #fff;
+      font-size: 1.13rem;
+      line-height: 1.7;
+      background: rgba(18, 24, 40, 0.82);
+      padding: 0.7rem 1rem 1rem 1rem;
+      border-radius: 0 0 8px 8px;
+      margin-top: 0;
+      margin-bottom: 0;
+      box-shadow: 0 2px 8px #0004;
+      text-align: left;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      .tech-section { flex-direction: column; align-items: flex-start; }
+      .carousel-frame { height: 220px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Meus Projetos</h1>
+  
+  <!-- Carrossel de Projetos -->
+  <div class="carousel-container" id="carousel">
+    <div class="carousel-slide active">
+      <div class="carousel-title">Gestor de Tarefas (Web App)</div>
+      <div class="carousel-desc">Aplicação web para organizar tarefas de forma dinâmica e intuitiva.</div>
+      <iframe class="carousel-frame" src="https://seu-projeto-demo.com"></iframe>
+      <a href="https://github.com/seu-usuario/projeto-exemplo" class="main-btn" target="_blank"><i class="fab fa-github"></i> Ver no GitHub</a>
+    </div>
+    <div class="carousel-slide">
+      <div class="carousel-title">Vídeo: Demonstração do Projeto</div>
+      <div class="carousel-desc">Veja o funcionamento do projeto em vídeo.</div>
+      <iframe class="carousel-frame" src="https://www.youtube.com/embed/HXV3zeQKqGY" allowfullscreen></iframe>
+      <a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" class="main-btn" target="_blank"><i class="fab fa-youtube"></i> Assistir no YouTube</a>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn" id="nextBtn" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="carousel-indicators" id="carouselDots"></div>
+  </div>
+
+  <!-- Cinema Showcase dos Projetos -->
+  <section style="background:linear-gradient(120deg,#181818 80%,#222 100%);padding:3rem 0 2rem 0;box-shadow:0 8px 32px #000a;">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <h2 style="color:#00e5ff;font-size:2.3rem;margin-bottom:1.2rem;letter-spacing:1px;text-shadow:0 4px 24px #000a;">🎬 Gestor de Tarefas (Web App)</h2>
+      <p style="color:#fff;font-size:1.25rem;margin-bottom:2.5rem;max-width:700px;margin-left:auto;margin-right:auto;text-shadow:0 2px 8px #000a;">
+        Aplicação web para organizar tarefas de forma dinâmica e intuitiva.<br>
+        Explore também outros projetos e experiências interativas abaixo!
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:stretch;">
+        <div style="background:#222;border-radius:18px;box-shadow:0 4px 32px #2196f350;padding:2rem 1.5rem;min-width:260px;max-width:320px;flex:1;display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;">📝</span>
+          <h3 style="color:#00e5ff;margin:1rem 0 0.5rem 0;">Gestor de Tarefas</h3>
+          <p style="color:#fff;opacity:0.9;font-size:1.08rem;margin-bottom:1.2rem;">Organize suas tarefas de forma prática e moderna.</p>
+          <a href="https://quantum-ai-project.vercel.app/" target="_blank" style="display:inline-block;padding:0.8rem 2.2rem;background:linear-gradient(90deg,#2196f3 60%,#00e5ff 100%);color:#fff;font-weight:600;border-radius:30px;font-size:1.1rem;text-decoration:none;box-shadow:0 2px 12px #2196f380;transition:background 0.3s,transform 0.2s;">Acessar Projeto</a>
+        </div>
+        <div style="background:#222;border-radius:18px;box-shadow:0 4px 32px #2196f350;padding:2rem 1.5rem;min-width:260px;max-width:320px;flex:1;display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;">🛠️</span>
+          <h3 style="color:#00e5ff;margin:1rem 0 0.5rem 0;">Utilitários</h3>
+          <p style="color:#fff;opacity:0.9;font-size:1.08rem;margin-bottom:1.2rem;">Ferramentas úteis para o dia a dia: calculadoras, conversores, geradores e mais.</p>
+          <a href="https://utilitarios-eight.vercel.app/" target="_blank" style="display:inline-block;padding:0.8rem 2.2rem;background:linear-gradient(90deg,#2196f3 60%,#00e5ff 100%);color:#fff;font-weight:600;border-radius:30px;font-size:1.1rem;text-decoration:none;box-shadow:0 2px 12px #2196f380;transition:background 0.3s,transform 0.2s;">Acessar Utilitários</a>
+        </div>
+        <div style="background:#222;border-radius:18px;box-shadow:0 4px 32px #2196f350;padding:2rem 1.5rem;min-width:260px;max-width:320px;flex:1;display:flex;flex-direction:column;align-items:center;">
+          <span style="font-size:2.2rem;">📋</span>
+          <h3 style="color:#00e5ff;margin:1rem 0 0.5rem 0;">Workshop Scrum</h3>
+          <p style="color:#fff;opacity:0.9;font-size:1.08rem;margin-bottom:1.2rem;">Conheça o framework Scrum, papéis, eventos e artefatos do desenvolvimento ágil.</p>
+          <a href="https://scrum-nine.vercel.app/" target="_blank" style="display:inline-block;padding:0.8rem 2.2rem;background:linear-gradient(90deg,#2196f3 60%,#00e5ff 100%);color:#fff;font-weight:600;border-radius:30px;font-size:1.1rem;text-decoration:none;box-shadow:0 2px 12px #2196f380;transition:background 0.3s,transform 0.2s;">Acessar Workshop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seções de Tecnologias -->
+  <section class="tech-section">
+    <img class="tech-img" src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="SQL">
+    <div class="tech-content">
+      <h2>SQL</h2>
+      <p>SQL (Structured Query Language) é a linguagem padrão para manipulação e consulta de bancos de dados relacionais. Utilizada para criar, consultar, atualizar e deletar dados em sistemas como MySQL, PostgreSQL e SQL Server.</p>
+      <div class="yt-links">
+        <a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank"><i class="fab fa-youtube"></i> SQL Básico</a>
+        <a href="https://www.youtube.com/watch?v=Ofktsne-utM" target="_blank"><i class="fab fa-youtube"></i> SQL Avançado</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="tech-section">
+    <img class="tech-img" src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" alt="SQLite3">
+    <div class="tech-content">
+      <h2>SQLite3</h2>
+      <p>SQLite3 é um sistema de gerenciamento de banco de dados relacional leve, amplamente utilizado em aplicações embarcadas, mobile e desktop. Não requer servidor e armazena os dados em um único arquivo.</p>
+      <div class="yt-links">
+        <a href="https://www.youtube.com/watch?v=byHcYRpMgI4" target="_blank"><i class="fab fa-youtube"></i> SQLite3 Tutorial</a>
+      </div>
+    </div>
+  </section>
+  
+  <section class="tech-section">
+    <img class="tech-img" src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
+    <div class="tech-content">
+      <h2>C++</h2>
+      <p>C++ é uma linguagem de programação poderosa, utilizada para desenvolvimento de sistemas, jogos, aplicações de alto desempenho e muito mais. Suporta programação orientada a objetos e recursos avançados de manipulação de memória.</p>
+      <div class="yt-links">
+        <a href="https://www.youtube.com/watch?v=Rub-JsjMhWY" target="_blank"><i class="fab fa-youtube"></i> C++ Básico</a>
+        <a href="https://www.youtube.com/watch?v=1v_4dL8l5DI" target="_blank"><i class="fab fa-youtube"></i> C++ Orientado a Objetos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parte prática -->
+  <section class="gallery-section">
+    <h2>Parte prática</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/ERRO 1 (1).png" alt="Ambiente de Desenvolvimento e Banco de Dados">
+        <h3 style="color:var(--accent2);font-size:1.3rem;margin-bottom:0.7rem;text-shadow:0 2px 8px #000a;">Ambiente de Desenvolvimento e Banco de Dados</h3>
+        <p style="color:#fff;font-size:1.08rem;line-height:1.7;text-shadow:0 2px 8px #000a;">Esta imagem mostra o Visual Studio Code com tema escuro, exibindo um projeto C++ que manipula um banco de dados SQLite. No centro, há uma tabela "produtos" com colunas id, nome e quantidade, e registros de exemplo. Abaixo, o terminal exibe erros de execução do programa, indicando problemas na execução do arquivo ./programa.exe no PowerShell. À esquerda, a estrutura do projeto inclui arquivos como main.cpp, inventario.db, Makefile e pastas src e sqlite.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/2025-06-24 (1).png" alt="Diagrama de Fluxo (Enquete)">
+        <h3 style="color:var(--accent2);font-size:1.3rem;margin-bottom:0.7rem;text-shadow:0 2px 8px #000a;">Diagrama de Fluxo (Enquete)</h3>
+        <p style="color:#fff;font-size:1.08rem;line-height:1.7;text-shadow:0 2px 8px #000a;">O diagrama apresenta o fluxo de uma enquete: o usuário acessa via QR Code, decide se a enquete será anônima ou não, e responde perguntas como nome, curso, desporto, equipe e enfermidades. O fluxo inclui opções predefinidas, login para enquetes não anônimas e lista de formulários disponíveis, ilustrando todo o processo de participação.</p>
+      </div>
+  </section>
+
+  <footer id="contato" style="text-align:center; padding:2rem 1rem; background:var(--secondary-bg); color:var(--primary-color); margin-top:2rem;">
+    <p>Entre em contato: <a href="mailto:aldirpedro@email.com" style="color:var(--accent2); text-decoration:underline;">aldirpedro@email.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/seu-perfil" target="_blank" style="color:var(--accent2); text-decoration:underline;">linkedin.com/in/seu-perfil</a></p>
+  </footer>
+
+  <script>
+    // Carrossel JS
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('carouselDots');
+    let currentSlide = 0;
+    
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+        if (slide.querySelector('iframe')) {
+          slide.querySelector('iframe').src = slide.classList.contains('active') ? slide.querySelector('iframe').dataset.src || slide.querySelector('iframe').src : '';
+        }
+      });
+      document.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
+      currentSlide = idx;
+    }
+    
+    function nextSlide() { showSlide((currentSlide + 1) % slides.length); }
+    function prevSlide() { showSlide((currentSlide - 1 + slides.length) % slides.length); }
+    
+    prevBtn.onclick = prevSlide;
+    nextBtn.onclick = nextSlide;
+    
+    // Dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => showSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+    
+    // Tema escuro/claro dinâmico
+    function applyTheme() {
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.body.style.backgroundColor = isDark ? '#121212' : '#f3f4f6';
+      document.body.style.color = isDark ? '#fff' : '#181818';
+    }
+    
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+    applyTheme();
+  </script>
+</body>
+</html>
